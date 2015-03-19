@@ -336,20 +336,20 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
         // Set up button (if set)
         if ([buttonTitle length])
         {
-            _button = [UIButton buttonWithType:UIButtonTypeCustom];
-            
-            
-            UIImage *buttonBackgroundImage = [UIImage imageNamed:[current valueForKey:@"buttonBackgroundImageName"]];
-            
-            buttonBackgroundImage = [buttonBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0, 12.0, 15.0, 11.0)];
-            
-            if (!buttonBackgroundImage)
-            {
-                buttonBackgroundImage = [UIImage imageNamed:[current valueForKey:@"NotificationButtonBackground"]];
-                buttonBackgroundImage = [buttonBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0, 12.0, 15.0, 11.0)];
-            }
-            
-            [self.button setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
+            _button = [UIButton buttonWithType:UIButtonTypeCustom];            
+//            UIImage *buttonBackgroundImage = [UIImage imageNamed:[current valueForKey:@"buttonBackgroundImageName"]];
+//            
+//            buttonBackgroundImage = [buttonBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0, 12.0, 15.0, 11.0)];
+//            
+//            if (!buttonBackgroundImage)
+//            {
+//                buttonBackgroundImage = [UIImage imageNamed:[current valueForKey:@"NotificationButtonBackground"]];
+//                buttonBackgroundImage = [buttonBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0, 12.0, 15.0, 11.0)];
+//            }
+//            [self.button setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
+            self.button.layer.borderColor = [UIColor grayColor].CGColor;
+            self.button.layer.borderWidth = 0.5;
+            self.button.layer.cornerRadius = 4.0;
             [self.button setTitle:self.buttonTitle forState:UIControlStateNormal];
             
             UIColor *buttonTitleShadowColor = [UIColor colorWithHexString:[current valueForKey:@"buttonTitleShadowColor"] alpha:1.0];
@@ -367,7 +367,14 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
             }
             
             [self.button setTitleColor:buttonTitleTextColor forState:UIControlStateNormal];
-            self.button.titleLabel.font = [UIFont boldSystemFontOfSize:14.0];
+            NSString *buttonFontName = [current valueForKey:@"buttonTitleFontName"];
+            CGFloat fontSize = [[current valueForKey:@"buttonTitleFontSize"] floatValue];
+            fontSize = fontSize ? fontSize : 14.0;
+            if (buttonFontName) {
+                self.button.titleLabel.font = [UIFont fontWithName:buttonFontName size:fontSize];
+            } else {
+                self.button.titleLabel.font = [UIFont boldSystemFontOfSize:fontSize];
+            }
             self.button.titleLabel.shadowOffset = CGSizeMake([[current valueForKey:@"buttonTitleShadowOffsetX"] floatValue],
                                                              [[current valueForKey:@"buttonTitleShadowOffsetY"] floatValue]);
             [self.button addTarget:self

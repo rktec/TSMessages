@@ -16,26 +16,30 @@
         "shadowOffsetY": -1,
         "textColor": "#FFFFFF",
         "titleFontSize": 14,
+        "titleFontName": "SourceHanSansCN-Normal",
         "backgroundColor": "#76CF67"
     },
     "message": {
         "backgroundImageName": "NotificationBackgroundMessage.png",
         "borderColor": "#727C83",
-        "borderHeight": 1,
+        "borderHeight": 0,
         "buttonBackgroundImageName": "NotificationButtonBackground.png",
-        "buttonTitleTextColor": "#727C83",
+        "buttonTitleFontName": "SourceHanSansCN-Normal",
+        "buttonTitleFontSize": 12,
+        "buttonTitleTextColor": "#FFFFFF",
         "buttonTitleShadowColor": "#EBEEF1",
         "buttonTitleShadowOffsetX": 0,
-        "buttonTitleShadowOffsetY": 1,
+        "buttonTitleShadowOffsetY": 0,
         "contentFontSize": 12,
-        "contentTextColor": "#727C83",
+        "contentTextColor": "#FFFFFF",
         "imageName": "",
         "shadowColor": "#EBEEF1",
         "shadowOffsetX": 0,
-        "shadowOffsetY": 1,
-        "textColor": "#727C83",
+        "shadowOffsetY": 0,
+        "textColor": "#FFFFFF",
         "titleFontSize": 14,
-        "backgroundColor": "#D4DDDF"
+        "titleFontName": "SourceHanSansCN-Normal",
+        "backgroundColor": "#4BB749"
     },
     "warning": {
         "backgroundImageName": "NotificationBackgroundWarning.png",
@@ -54,6 +58,7 @@
         "shadowOffsetY": 1,
         "textColor": "#484638",
         "titleFontSize": 14,
+        "titleFontName": "SourceHanSansCN-Normal",
         "backgroundColor": "#DAC43C"
     },
     "error": {
@@ -73,6 +78,7 @@
         "shadowOffsetY": -1,
         "textColor": "#FFFFFF",
         "titleFontSize": 14,
+        "titleFontName": "SourceHanSansCN-Normal",
         "backgroundColor": "#DD3B41"
     }
 }
